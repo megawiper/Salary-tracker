@@ -74,8 +74,8 @@ fun MainScreen(viewModel: MainViewModel = viewModel()) {
                 .fillMaxSize()
                 .verticalScroll(rememberScrollState())
         ) {
-            if (dueTodayPeriod != null) {
-                PaymentDueTodayCard(dueTodayPeriod)
+            dueTodayPeriod?.let { due ->
+                PaymentDueTodayCard(due)
                 Spacer(Modifier.height(4.dp))
             }
 
